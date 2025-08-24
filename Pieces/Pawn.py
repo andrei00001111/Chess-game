@@ -19,3 +19,6 @@ class Pawn(Piece):
         else:
             auxMoves.append([2,0])
         return auxMoves
+    
+    def reverMoveTwice(self):
+        self.canMoveTwice = not self.canMoveTwice
