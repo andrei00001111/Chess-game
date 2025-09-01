@@ -5,7 +5,7 @@ class Side:
         elif side == 'White':
             self.side = 0
         else: raise Exception(f"Sides can only be 'Black' or 'White', but {side} was given")
-    def side(self):
+    def getSide(self):
         if self.side == 1:
             return 'Black'
         else:
