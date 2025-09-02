@@ -1,8 +1,9 @@
 import pygame
 import Square
+import Piece
 class Board:
     boardMap = []
-    def createBoard(self, length = 8, width = 8):
+    def __init__(self, length = 8, width = 8):
         self.length = length
         self.wdith = width
         for i in range(length):
@@ -15,9 +16,17 @@ class Board:
                 widthMap.append(square)
             self.boardMap.append(widthMap)
 
+    def getPieceFromSquare(self, length, width):
+        return self.boardMap[length][width].getPiece()
+    
+
+    def putPieceInSquare(self, piece:Piece, length, width):
+        self.boardMap[length][width].putPiece(piece)
+
     def getBoardState(self):
         return self.boardMap
 
+    # TODO: Show the board with pygame
     def showBoard(self):
         pass
                 
